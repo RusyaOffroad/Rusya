@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model 1</title>
+    <style>
+        header {
+            background-color: rgb(236, 113, 12);
+            text-align: center;
+            padding: 30px 0px 30px 0px;
+        }
+
+        div {
+            background-color: grey;
+            padding: 30px 0px 30px 0px;
+
+        }
+
+        span {
+            text-decoration: underline;
+            
+        }
+
+        ul {
+            list-style: none;
+            float: center;
+            padding: 0px;
+           }
+           .divfirst{ 
+            display: inline-block;
+            width: 45%;
+            background-color: brown;
+            margin: 5px 0px 0px 5px;
+            padding: 5px 0px 0px 5px;
+            
+         }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1> Sample Page</h1>
+        <h2 style="color: white;"> with CSS Box model</h2>
+        <h4> for students</h4>
+    </header>
+    <main>
+        <div class="divfirst">
+            <p>About Us</p>
+            <p>Loren ipsum dolor sit amet...</p>
+        </div>
+        <div class="divfirst">
+            <p>Our mission</p>
+            <p>Lorem ipsum sit amet...</p>
+        </div>
+    </main>
+    <footer><hr>
+        <div>
+            <div style="float: left; width: 30%;">
+                <span>Our Courses </span>
+                <ul>
+                    <li>HTML 5/CSS</li>
+                    <li>Java Script</li>
+                    <li>PHP/MySql</li>
+                    <li>CMS/SEO</li>
+                </ul>
+            </div>
+            <div style="float: left; width: 40%;">
+                <span>Our Services</span>
+                <ul>
+                    <li>Group traning</li>
+                    <li>Individual traning</li>
+                    <li>Online traning</li>
+                    <li>The latest techniques</li>
+                </ul>
+            </div>
+            <div style="float: left; width: 30%">
+                <span> Useful Links</span>
+                <ul>
+                    <li>Lorem Ipsum dolor sit</li>
+                    <li>Fugit munus vitae tenetur</li>
+                    <li>Sunt tempora ipsam facere</li>
+                    <li>Return sunt suscript officia</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="background-color: black; color: white;">&copy;2018 Simple Page
+            <p style="float: right;">All right reserved</p>
+        </div>
+
+
+
+    </footer>
+</body>
+
+</html>
