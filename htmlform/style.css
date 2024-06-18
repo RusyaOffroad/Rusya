@@ -1,0 +1,11 @@
+form {
+    border: 1px solid red;
+}
+input[type="submit"] {
+    background-color: blueviolet;
+    color:aliceblue;
+}
+#reset {
+    background-color: brown;
+    color: aliceblue;
+}

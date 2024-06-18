@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Формы </title>
+    
+</head>
+
+<body>
+    <form action="/search?username=tom" method="post">
+        <ul style="list-style: none;"> <!--убрал точки списка-->
+            <li> <label for="name">Введите имя</label></li>
+            <li><input type="text" id="username" id="username" /> </li>
+            <li> <input type="submit" value="Отправить" /></li>
+        </ul>
+        <ul style="list-style: none;">убрал точки списка
+            <li><label type="password">Введите пароль</label> </li>
+            <li><input type="text" id="username" id="username" /> </li>
+            <li>
+                <p>Пол</p>
+                <input type="radio" id="male" value="male" name="sex"/><!--name='sex'выбрать что то одно-->
+                <label type="male">Мужской</label>
+                <input type="radio" id="female" value="frmale" name="sex" /> 
+                <label type="frmale">Женский</label>
+            </li>
+            <li> 
+                <input type="checkbox" name="" id="my-checkbox"/>
+                <label for="my-checkbox"> Запомнить</label>
+            </li>
+            
+            <li>
+                <input type="submit"/>
+            </li>
+            <li>
+                <input type="reset" id="reset"/>
+            </li>
+        </ul>
+</form>
+<p> Form 2</p>
+<form action="" method="get">
+    <label for="my-select"> Choose car</label>
+    <select name="my-select" id="my-select"><!--multiple все в окне будет-->
+        <option value="Audi">Audi</option>
+        <option value="Mercedes"> Mersedes</option>
+         </select>
+         <ul style="list-style: none;">
+         <li>
+            <label for="comments"> Enter your comments:</label>
+            <textarea name="comments" id="comments"></textarea>
+         </li>
+         </ul>
+         <p> Form3</p>
+         <form action="">
+         <fieldset>
+            <legend> Legend of my fieldset:</legend>
+            <input list="languages"/>
+            <datalist id="languages"> 
+                <option value="english"></option>
+                <option value="russian"></option>
+            </datalist>
+         </fieldset>
+        </form>
+
+</form>
+</body>
+
+</html>

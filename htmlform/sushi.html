@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushi</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend> Форма заказа:</legend>
+        <form action="/search?username=tom" method="post">
+            <ul>
+                <li><label for="name"> Имя:</label> </li>
+                <li><input type="text" id="username" /> </li>
+                <li><label for="address"> Адрес:</label> </li>
+                <li><input type="text" id="address" /> </li>
+                <li><label for="phone"> Номер телефона</label> </li>
+                <li><input type="tel" id="phone" /> </li>
+                <li><label for="email"> Email:</label> </li>
+                <li><input type="email" id="email" /></li>
+                <li><label for="count">Количество палочек:</label> </li>
+                <li><input type="number" id="count"/></li>
+                <li><label for="my-select"> Вид палочек:</label></li>
+                <select name="my-select" id="my-select">
+                    <option value="обычные">обычные</option>
+                    <option value="учебные"> учебные</option>
+                </select>
+                <li><label for="my-select">Список для выбора суши:</label> </li>
+                <select name="my-select" id="my-select" multiple>
+                    <option value="сет1">сет1</option>
+                    <option value="сет2"> сет2</option>
+                    <option value="сет3">сет3</option>
+                    <option value="сет4"> сет4</option>
+                    <option value="сет5">сет5</option>
+                    <option value="сет6"> сет6</option>
+                    <option value="сет7">сет7</option>
+                    <option value="сет8"> сет8</option>
+                    <li><input type="radio" id="male" value="male" name="sex"/></li>
+                    <li><label type="male">да</label></li>
+                    <li><input type="radio" id="female" value="frmale" name="sex" /> </li>
+                    <li><label type="frmale">нет</label></li>
+
+            </ul>
+    </fieldset>
+    </form>
+</body>
+
+</html>
