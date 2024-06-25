@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow-control</title>
+    <script>
+        let x = parseInt(prompt("введите число"));
+        let mod = x % 2;
+        if (mod === 0) {
+            alert("Number is even ");
+        } else if (isNaN(mod)) {
+            alert(" number is odd");
+        } else {
+            alert("Not a number ");
+        }
+        switch (mod){
+            case 0: //mod === 0 
+            alert ("Number is even") ;
+            break;
+            default:
+                alert ("Number is odd");
+                break;
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
