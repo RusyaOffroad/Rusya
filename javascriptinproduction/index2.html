@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document JavaScript</title>
 <script> 
-let x = prompt ('Введите число');
+/*let x = prompt ('Введите число');
 let result = x * 2;
 console.log(result);
-alert (`${x} в степени 2 = ${result}`); 
+alert (`${x} в степени 2 = ${result}`); */
 
-let b = prompt ("Введите число")
+/*let b = prompt ("Введите число")
 let y = prompt ("Введите число")
 alert (`Среднее арифметическое число ${b} и ${y} = ${result}`);
 
@@ -34,16 +34,27 @@ alert (`${result} = ${result1} = ${result2} = ${result3}`);
 let a = parseInt (prompt ("Введите значение"));
 let b = parseInt (prompt ("Введите значение"));
 result = -b / a;
-alert (`${result}`);
+alert (`${result}`);*/
 
-let h = parseInt (prompt ("Введите часы"));
-let m = parseInt (prompt("Введите минуты"));
+/*let h = parseInt (prompt ("Введите часы"));
+let m = parseInt (prompt ("Введите минуты"));
 m = 60 - m;
 h > 0 ? h = 23 - h : h = 24 - h; 
 
-alert (`${h} часы ${m} минуты`);
+alert (`${h} часы ${m} минуты`);*/
 
-let a = parseInt (promt ("Введите число"));
+let p = parseInt (prompt ("Введите трехзначное число"));
+let c = (p / 10) % 10;
+let n = p / 10;
+let b = p % 10;
+let a = p / 10;
+
+
+alert (`${c} второе число`);
+
+
+//s = (n / 10) % 10;
+//Здесь делим трехзначное число abc на 10 и получаем ab, а затем получаем остаток от деления ab на 10 — опять же, искомое b.
 
 
 
