@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array practice</title>
+    <script>
+        /* max (1,2,3,4,5);
+         max (1,2);
+ 
+         function max(num1, num2, num3, num4, num5){
+         let max = num1;
+         if (max < num2) max = num2;
+         if (max < num3) max = num3;
+         if (max < num4) max = num4;
+         if (max < num5) max = num5;
+         return(max);
+         }
+         
+         */
+        /*function min(n1,n2,n3) {
+             if (n1 < n2 && n1 < n3 ) return n1;
+             if (n2 < n3 ) return n2;
+             return n3;
+         }
+            alert(`${min(20 , 3 , 7)}`);
+            alert(`${max(20 , 3 , 7, 10, 45)}`);*/
+
+        /* let numbers = [1, 2, 3, 4];
+         alert(numbers[0]);
+         numbers[3] = 100;
+         numbers[4] = 400;
+         document.write(numbers[3]);
+         alert(numbers)[4];
+         document.write(numbers.leng);
+         
+         for (let i = 0; i< numbers.length; i++){
+             alert(numbers[i]);
+         }
+         document.write(numbers.toString());*/
+
+        let randomNums = generateArray();
+        show(randomNums);
+        document.write('<br>');
+        //showEvenElements(randomNums);
+        sumElements(randomNums);
+
+        function sumElements(array) {
+            let ss = 0;
+            for (let i = 0; i < array.length; i++) {
+                ss += array[i];
+                }
+                document.write(ss);
+        }
+
+        function showEvenElements(array) {
+            for (let i = 1; i < array.length; i += 2) {
+                document.write(array[i]);
+             
+            }
+        }
+
+        function show(array) {
+            document.write(array);
+        }
+
+        randomNums[0] = Math.floor(Math.random() * 100);
+       // document.write(randomNums[0]);
+
+        function generateArray() {
+            let array = [];
+            for (let i = 0; i < 10; i++) {
+                array[i] = Math.floor(Math.random() * 100);
+            }
+            return array;
+        }
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+
+</body>
+
+</html>
