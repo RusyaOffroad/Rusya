@@ -44,10 +44,10 @@
             this.fontFamily = fontFamily;
 
             this.print = function (text) {
-                let parametrs = `<span style = "color:${this.fontColor};font:${this.fontSize}px ${this.fontFamily};"> ${text}  </p>`;
+                let output = `<span style = "color:${this.fontColor};font:${this.fontSize}px ${this.fontFamily};"> ${text}  </p>`;
                 //let parametrs1 = `<p style = "font-size: 10px comics;"> ${fontSize} </p>`;
                 //let parametrs3 = `<p style = "color:red">  ${fontFamily}</p>`;
-                document.write(parametrs);
+                document.write(output);
             }
         }
         let myPrintMachine = new PrintMachine(150, "green", "Comics");
@@ -55,12 +55,13 @@
         let style = myPrintMachine.print("my text");
         // print(style); 
 
-        function News(heading, text, data) {
+        function News(heading, text, data, tags) {
             this.heading = heading;
             this.text = text;
             this.data = data;
+            this.tags = tags;
 
-            this.print = function (all) {
+            this.print = function () {
                 let heading = "What is Lorem Ipsum";
                 let text = " Электрический свет продолжает наш день И коробка от спичек пуста"
                 "Электрический свет продолжает наш день И коробка от спичек пуста";
@@ -70,6 +71,9 @@
             }
         };
 
+        let tags = {"hjghj", "ghjj"," ghjghj"};
+
+        new News("ghklj", "fgjhjh", "11-11-2002", tags)
 
 
     </script>
