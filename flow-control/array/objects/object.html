@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects practice</title>
+    <script>
+        /* function User(firstName,lastName,age,city,contry,married){ //Конструктор
+             this.lastName = lastName;
+             this.firstName = firstName;
+             this.age = age;
+             this.city = city;
+             this.contry = contry;
+             this.married = married;
+ 
+             this.getName = function(text){
+                 let name = `${text} ${this.firstName} ${this.lastName}`;
+                // name = text + this.firstName + " " + this.lastName; Тоже самое что и выше строка №18
+                return name;
+             }
+             
+         }
+         let user = new User ("Kane", "Harry", 34, "London", "England", "Yes",);
+         let name = user.getName("user:");
+         alert(name);
+ 
+         //let user = {
+            // firstName: "Harry",
+             //lastName: "Kane",
+             //age: 34,
+             //city: "London",
+             //contry: "England",
+             //married: "Yes",
+         //}*/
+        // document.write(user.firstName + " " + user.lastName + " " + user.age,);
+        //document.write("</br>");
+        //document.write(user.contry + " " + user.city + " " + user.married,);
+        //document.write(`${user.married}`);
+
+        function PrintMachine(fontSize, fontColor, fontFamily,) {
+            this.fontSize = fontSize;
+            this.fontColor = fontColor;
+            this.fontFamily = fontFamily;
+
+            this.print = function (text) {
+                let parametrs = `<span style = "color:${this.fontColor};font:${this.fontSize}px ${this.fontFamily};"> ${text}  </p>`;
+                //let parametrs1 = `<p style = "font-size: 10px comics;"> ${fontSize} </p>`;
+                //let parametrs3 = `<p style = "color:red">  ${fontFamily}</p>`;
+                document.write(parametrs);
+            }
+        }
+        let myPrintMachine = new PrintMachine(150, "green", "Comics");
+        //document.write('<span style = "color:red">' + user.fontSize + " " + user.fontColor + " " + user.fontFamily, '</span>');
+        let style = myPrintMachine.print("my text");
+        // print(style); 
+
+        function News(heading, text, data) {
+            this.heading = heading;
+            this.text = text;
+            this.data = data;
+
+            this.print = function (all) {
+                let heading = "What is Lorem Ipsum";
+                let text = " Электрический свет продолжает наш день И коробка от спичек пуста"
+                "Электрический свет продолжает наш день И коробка от спичек пуста";
+                let data ;
+                document.write(all);
+
+            }
+        };
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

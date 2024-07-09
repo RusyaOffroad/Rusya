@@ -50,14 +50,14 @@
             let ss = 0;
             for (let i = 0; i < array.length; i++) {
                 ss += array[i];
-                }
-                document.write(ss);
+            }
+            document.write(ss);
         }
 
         function showEvenElements(array) {
             for (let i = 1; i < array.length; i += 2) {
                 document.write(array[i]);
-             
+
             }
         }
 
@@ -66,7 +66,7 @@
         }
 
         randomNums[0] = Math.floor(Math.random() * 100);
-       // document.write(randomNums[0]);
+        // document.write(randomNums[0]);
 
         function generateArray() {
             let array = [];
@@ -75,6 +75,18 @@
             }
             return array;
         }
+
+        let fruit = [10, 22, 33, 65, 12, 55, 77, 43, 87, 5]
+        let mass = fruit.length;
+        function result44(fruit) {
+            fruit.splice(0, 1);
+            console.log(fruit);
+        }
+        function result45(fruit) {
+            fruit.splice(1, 0, 100, 200,)
+            console.log(fruit);
+        }
+
 
 
 
