@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+    <script>
+        class Coffee {
+            constructor(name, volume, price) {
+                this.name = name;
+                this.volume = volume;
+                this.price = price;
+
+            }
+            make() {
+                alert("Кофе готовится");
+
+            }
+            info() {
+                alert(`name: ${this.name}
+            volume: ${this.volume}
+            price: ${this.price}`);
+            }
+            info(){
+                let information = (`name: ${this.name}
+            volume: ${this.volume}
+            price: ${this.price}`);
+            };
+        }    //extends Наследование американо наследуется от класса кофе 
+        //если наследует то (характеристики -поля,свойства. Поведение- методы.)
+        // Переобределение родительского метода когда в классе вы потомки изменяете логику
+        // метода кторый есть в классе родителя.
+        class Americano extends Coffee {
+            make() {
+                alert("Americano готовится");
+            }
+        }
+        class Latte extends Coffee {
+            constructor(name, volume, price, milk) {
+                super (name, volume, price);
+                // this.name = name;
+                // this.volume = volume;
+                // this.price = price;
+
+                this.milk = milk;
+            }
+            make(){
+                alert("Latte готовится")
+            }
+        }
+       
+
+          
+            
+
+        let coffee1 = new Coffee("coffee1", 100, 150);
+        coffee1.make();
+        coffee1.info();
+
+        let americano = new Americano("americano", 100, 150);
+        americano.info();
+        americano.make();
+
+        let latte = new Latte("latte", 100, 200);
+        latte.info();
+        latte.make();
+
+         class Latte1 extends Latte(
+    constructor(name,volume, price,milk,){
+        super (name, volume, price, milk ,);
+    }
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

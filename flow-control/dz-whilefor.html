@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DZ while,for</title>
     <script>
-     /*let x = parseInt (prompt("Введите число"));
+     let x = parseInt (prompt("Введите число"));
      let y = parseInt (prompt("Введите число"));
      
      for (i = 0; i=x+y; ){
@@ -27,15 +27,15 @@
      alert(num3);
      
      let num = parseInt (prompt("Введите число"));
+     alert(findNumber(num));
      function findNumber(x){
-        let number = [];
+        let numbers = [];
         for (let i = 1; i<=x; i++){
             if (x % i === 0){
-                number.push(i);
+                numbers.push(i);
             }
         }
-        return number;
-        alert(findNumber);
+        return numbers;
      }
      let numb1 = prompt ('Введите число');
      function findNumb (x){
@@ -45,12 +45,12 @@
      }
      alert(findNumb(numb1));
     //таблица умножения
-
-    for (let a = 2; a<=10; a+=1) {
-    for (let b = 1; b<=10; b+=1){
+    
+    for (let a = 2; a<=10; a++) {
+    for (let b = 1; b<=10; b++){
      console.log(`${a} x ${b} = ${a * b}`);
     }
-    }*/
+    }
     let string = prompt('Введите число');
     let b = prompt('на сколько сдвинуть?');
     console.log(string.slice(b)+ string.slice(0,b));

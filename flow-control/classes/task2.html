@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button class2</title>
+    <script>
+        //         Задание 2 
+        // Реализовать класс, описывающий геометрическую фигуру со 
+        // свойствами и методами:
+        // ■ get-свойство для получения названия фигуры;
+        // ■ метод для вывода информации о фигуре (стороны и их 
+        // длина);
+        // ■ метод для вычисления площади фигуры;
+        // ■ метод для вычисления периметра фигуры.
+        // Реализуйте классы-наследники: квадрат, прямоугольник и 
+        // треугольник. Переопределите методы вывода и вычислений в 
+        // классах-наследниках.
+        // Создайте массив с различными фигурами и выведите инфорамацию о каждой фигуре, включая площадь и периметр.
+        class Shape {
+            #name = "Some shape"; //скрытое имя (конфид)
+            get name(){
+                return this.#name;
+            }
+            set name(newName){      //изменяет название переменной
+                this.#name = newName;   // переимонвание
+            }
+            constructor(a,) {
+                this.a = a;
+            }
+            info() {
+                return `a = ${this.a}`;
+
+            }
+            area() {
+             return undefined;
+            }
+            perimetr() {
+              return undefined;
+            }
+        }
+        class Square extends Shape {
+            
+            area() {
+            return this.a ** 2; //возвести в степень 2 или учножить
+            }
+            perimetr(){
+              return 4 * this.a;
+            }
+        }
+        class Rectangle extends Shape {
+           constructor (a, b){
+            super(a);
+            this.b = b;
+           }
+           info(){
+            return super.info() + `\nb = ${this.b}`;
+           }
+        }
+
+        class Triangle extends Shape {
+
+        }
+
+let square = new Square(5);
+square.name = "Square";
+alert(square.name);
+alert(square.info());
+alert(square.area());
+alert(square.perimetr());
+
+
+
+//let shape = new Shape (12);
+// console.log(shape.a);
+// console.log(shape.name);
+// shape.name = "this shape";
+// console.log (shape.name);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

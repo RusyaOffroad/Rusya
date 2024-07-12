@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button class</title>
+    <script>
+
+// Задание 1
+// Реализовать класс Button, который содержит ширину, высоту, 
+// текст кнопки и метод showBtn(), который выводит кнопку на экран 
+// с помощью тега button и функции document.write(). 
+// Реализовать класс BootstrapButton, унаследовав его от класса 
+// Button. Добавить поле color и переопределить метод showBtn()
+// так, чтобы кнопка выводилась со стилями и указанным цветом.
+    class Button {
+        constructor (width, height, text){
+            this.width = width;
+            this.height = height;
+            this.text = text;
+        }
+        showBtn(){
+let output = `<button style = "width: ${this.width}px; height: ${this.height}px; "> ${this.text} </button>`
+document.write(output);
+        } 
+        
+}
+
+    // document.write(
+    //     `<button style = "width: ${this.width}px; height: ${this.height}px">
+    //         ${this.text}</button>`
+    // );
+
+
+    class BootstrapButton extends Button {
+        constructor (width, height, text,color){
+            super(width,height,text);
+            this.color = color;
+        }
+        showBtn(){
+            let output = `<button style = "width: ${this.width}px; height: ${this.height}px; background-color: ${this.color} "> ${this.text} </button>`
+document.write(output);
+        }
+    }
+let button = new Button(100, 60,"Cancel");
+button.showBtn();
+
+let bootstrapButton = new BootstrapButton(250, 20,"push", "green");
+bootstrapButton.showBtn();
+        
+
+    
+
+
+
+    </script>
+</head>
+<body>
+   
+
+    
+    
+</body>
+</html>
