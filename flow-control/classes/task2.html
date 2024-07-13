@@ -20,13 +20,13 @@
         // Создайте массив с различными фигурами и выведите инфорамацию о каждой фигуре, включая площадь и периметр.
         class Shape {
             #name = "Some shape"; //скрытое имя (конфид)
-            get name(){
+            get name() {
                 return this.#name;
             }
-            set name(newName){      //изменяет название переменной
-                this.#name = newName;   // переимонвание
-            }
-            constructor(a,) {
+            // set name(newName) {      //изменяет название переменной
+            //     this.#name = newName;   // переимонвание
+            // }
+            constructor(a) {
                 this.a = a;
             }
             info() {
@@ -34,49 +34,82 @@
 
             }
             area() {
-             return undefined;
+                return undefined;
             }
             perimetr() {
-              return undefined;
+                return undefined;
             }
         }
+
         class Square extends Shape {
-            
+
             area() {
-            return this.a ** 2; //возвести в степень 2 или учножить
+                return this.a ** 2; //возвести в степень 2 или учножить
             }
-            perimetr(){
-              return 4 * this.a;
+            perimetr() {
+                return 4 * this.a;
             }
         }
+
         class Rectangle extends Shape {
-           constructor (a, b){
-            super(a);
-            this.b = b;
-           }
-           info(){
-            return super.info() + `\nb = ${this.b}`;
-           }
+            constructor(a, b) {
+                super(a);
+                this.b = b;
+            }
+            info() {
+                return super.info() + `\nb = ${this.b}`;
+            }
+            perimetr() {
+                return this.a + this.a + this.b + this.b;
+            }
+
         }
+
 
         class Triangle extends Shape {
+            constructor(a, b, c) {
+                super(a);
+                this.b = b;
+                this.c = c;
+            }
+            info() {
+                return `a= ${this.a}, b= ${this.b}, c= ${this.c}`;
+            }
+            perimetr(){
+                return this.a + this.b + this.c ;
+            }
+        }
+        
+        let triangle = new Triangle(5, 5, 10);
+        let rectangle = new Rectangle(10, 15);
+
+
+
+        let square = new Square(5);
+        // square.name = "Square";
+        // alert(square.name);
+        // alert(square.info());
+        // alert(square.area());
+        // alert(square.perimetr());
+
+        let array = [triangle, square, rectangle];
+        for ( let i = 0; i < array.length; i++) {
+            document.write(array[i].info()+"<br/>");
+            document.write(array[i].perimetr()+"<br/>");
 
         }
 
-let square = new Square(5);
-square.name = "Square";
-alert(square.name);
-alert(square.info());
-alert(square.area());
-alert(square.perimetr());
 
 
 
-//let shape = new Shape (12);
-// console.log(shape.a);
-// console.log(shape.name);
-// shape.name = "this shape";
-// console.log (shape.name);
+
+
+
+        //let shape = new Shape (12);
+        // console.log(shape.a);
+        // console.log(shape.name);
+        // shape.name = "this shape";
+        // console.log (shape.name);
 
     </script>
 </head>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExtentedArray Class</title>
+    <script>
+        class ExtentedArray extends Array {
+            getString(separator) {
+                return this.join(separator);
+
+            }
+            getHtml(tagName) {
+                let html = "";
+
+                if (tagName === "li") {
+                    html += "<ul>";
+                }
+
+                for (let i = 0; i < this.length; ++i) {
+                    html += `<${tagName}>${this[i]}</${tagName}>`;
+                }
+
+                if (tagName === "li") {
+                    html += "</ul>";
+                }
+                return html;
+
+            }
+        }
+        let extentedArray = new ExtentedArray("HTML", "STRING");
+        //  document.write(extentedArray.getString("@"));
+        document.write(extentedArray.getHtml("span"));
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
