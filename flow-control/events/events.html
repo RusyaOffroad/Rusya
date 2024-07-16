@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENTS paractice</title>
+
+</head>
+
+<body>
+
+    <div id="container" onmouseover="mouseOverHandler()" onmouseout="clickHandler()">
+        <p id="text"> Фундаментальный недостаток описанных выше способов назначения
+            Например, одна часть кода хочет при клике на кнопку делать её подсвеченной
+            невозможность повесить несколько обработчиков на одно событие.</p>
+
+    </div>
+    <input type="button" value="click me"
+        onclick="document.getElementById (`container`).style.backgroundColor = 'blue'"/>
+    
+    <script>
+        let div = document.getElementById("container");
+       // div.innerHTML = "<p>Hello</p>";
+        div.style.backgroundColor = "green";
+       // div.innerText = "HELLO!!!";
+        div.style.padding = "10px";
+        div.style.width = "55%";
+
+        let paragraph = document.getElementById("text");
+        paragraph.addEventListener("click", textClickHandler, false);
+        paragraph.addEventListener("click", textClickHandler2, false);
+
+        function textClickHandler() {
+            paragraph.style.fontSize = "20px";
+        }
+        function textClickHandler2(event) {
+            paragraph.innerHTML += `<br/>${event.clientX}, ${event.clientY}`; //<br/> переход на новую строку
+             
+        }
+
+        //    div.onmouseover = function(){
+        //         div.style.color = "white"; можно так  установить обьекту функцию
+        //     }
+
+        function mouseOverHandler() {
+            div.style.color = 'white';
+        }
+        function clickHandler() {
+            div.style.color = "black";
+        }
+    </script>
+
+</body>
+
+</html>

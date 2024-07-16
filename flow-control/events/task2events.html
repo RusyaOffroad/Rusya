@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task2 events</title>
+    <style>
+    
+    </style>
+</head>
+
+<body>
+
+    <div id = "container">
+        <p id ="cordinates" > </p>
+        <p id ="mouseInfo" > </p>
+
+    </div>
+     <div id="container"> 
+        <input type="button" id="button" value="Click" />
+    </div>
+    <script>
+        let container = document.getElementById("container");
+        container.addEventListener("mousemove",moveInfo);
+        container.addEventListener("mousedown",clickInfo);
+        container.addEventListener("contextmenu", contextHandler);
+
+        function moveInfo (e){
+            let cordinates = document.getElementById ("cordinates");
+            cordinates.innerHTML = "X = , Y = ";
+        }
+        function clickInfo(e){
+            let mouseInfo = document.getElementById("mouseInfo");
+            mouseInfo.innerHTML = e.button;
+
+        }
+        function contextHandler(event) {
+            event.preventDefault();
+        }
+        let button = document.getElementById("button");
+        button.addEventListener("mousedown", clickHandler, false);
+        button.addEventListener("contextmenu",contextHandler, false);
+        function clickHandler(event) {
+            console.log(event.button);
+        }
+        function contextHandler(event){  //чтоб окно правой кнопки мыши не появлялось
+            event.preventDefault();
+        }
+    </script>
+</body>
+
+</html>

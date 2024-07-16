@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>generation number</title>
+    <script>
+        function getRandomNumber() {
+            let result = Math.floor (100 * Math.random());  //умножаем на 100 и округляем Math.floor. Рандом только 0 или 1
+            let div = document.getElementById("container");
+            div.innerHTML = `<p>Random number:</p>${result}`;
+           // p.innerHTML = Math.floor(100 * Math.random());
+            return result;
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Создать html-страницу для генерации случайных чисел. На 
+странице должна быть кнопка, при нажатии на которую случайное 
+целое число от 0 до 100 выводится в div -->
+    <div id="container">
+        <p>Random number:</p>
+        <p id= "getRandomNumber"></p>
+    </div>
+    <input type="button" value="Generation Random Number" onclick="getRandomNumber()" />
+</body>
+
+</html>
