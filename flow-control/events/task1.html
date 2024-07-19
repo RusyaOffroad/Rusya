@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task1</title>
+    <style>
+        table,
+        td {
+            border-collapse: collapse;
+            border: 5px solid black;
+        }
+    </style>
+    <table>
+        <tr>
+            <td>apple</td>
+            <td>orange</td>
+            <td>bananas</td>
+        </tr>
+        <tr>
+            <td>skoda</td>
+            <td>bmw</td>
+            <td>audi</td>
+        </tr>
+
+
+    </table>
+
+    <script>
+        // let tdList = document.querySelectorAll("td");
+        // for (let td of tdList) {
+        //     td.addEventListener("mouseover", changeBackground);
+        //     td.addEventListener("mouseout", changeBackground);
+        // }
+        // function changeBackground(event) {
+        //     console.log(event);
+        //     let cell = event.srcElement;  //или написать event.target
+        //       cell.style.backgroundColor = event.type === "mouseover" ? "green" : "";
+            
+        //     }
+            
+
+    </script>
+</head>
+
+<body>
+    <br>
+    <div> 
+        <input type="button" id="likeBtn" value="Like 0" />
+        
+    </div>
+ </table>
+ 
+</body>
+<script>
+    let newButton = document.querySelector("input"); //или так (#likeBtn)
+     newButton.addEventListener("click", addLike);
+     let count = 0;
+     
+
+       function addLike(event){
+       event.target.value = `like ${++count}`;
+
+       }
+
+
+        //    let count = 0;
+        //    newButton.addEventListener("click", () => count.innerHTML++)
+        //    count.innerHTML ++;
+        //    console.log(count);
+           
+
+        //console.log(event.target);
+        //event.target.value = "new ButtonLike";
+       
+
+
+
+    //  function counter() {
+    //         let count = 0;
+    //         return function () {
+    //             count++;
+    //             return count;
+    //         }
+    //     }
+    //button.addEventListener("click", () => count.innerHTML++)
+
+</script>
+
+</html>
