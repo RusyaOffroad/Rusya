@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="get">
+        <input type="text" id="input" />
+        <input type="submit" />
+    </form>
+    <script>
+        let form = document.forms[0];
+        form.addEventListener("submit", submitHandler);
+        function submitHandler(event) {
+            event.preventDefault(); //чтоб страница не обновлялась
+            let div = document.createElement("div");
+
+            let input = document.getElementById("input");
+            div.innerText = input.value;
+            document.body.appendChild(div);
+        }
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON1</title>
+    
+
+</head>
+<body>
+    <div id="container">
+
+    </div>
+    <script>
+    let p = document.createElement("p"); //создал элемент
+    p.innerText = "rusya"; //присвоил к p текст
+    document.getElementById("container").appendChild(p); //к элементу с id container добавил p
+    button = document.createElement("button");
+    button.innerText = "Submit";
+    button.style.display = "block"; //стал блоком и перешел на новую строку
+    document.getElementById("container").appendChild(button);
+    button.onclick = function() {
+    //p.style.color = "blue";
+    if (p.style.color === "black"){
+        p.style.color = "green";
+    } else {
+        p.style.color = "black";
+    }
+    p.innerText = input.value;
+    // console.log(input.value);
+    }
+    button.onmouseover = function(){
+        button.style.backgroundColor = "red";
+        button.style.color = "white";
+    }
+    button.onmouseout = function(){
+        button.style.backgroundColor = "";
+        button.style.color = "";
+    }
+    let input = document.createElement("input");
+    document.getElementById("container").appendChild(input);
+
+</script>
+</body>
+</html>

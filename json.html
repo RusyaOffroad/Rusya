@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h4 {
+            text-align: center;
+        }
+
+        .userDiv {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #000000;
+        }
+
+        table,
+        td,
+        tr {
+            border: 1px solid #000000;
+            border-collapse: collapse;
+        }
+    </style>
+    <script>
+        // let user = {
+        //     id: 1,
+        //     name: "UserName",
+        //     age: 24
+        // }
+
+        // let jsonString = JSON.stringify(user)
+        // console.log(jsonString);
+
+        let request = new XMLHttpRequest();
+        let users;
+        // let response;
+
+        request.open("GET", "https://jsonplaceholder.typicode.com/users");
+        request.send();
+
+        request.onload = function () {
+            // response = request.response;
+            // console.log(request.response);
+            users = JSON.parse(request.response);
+            let usersDiv = document.getElementById("users");
+            let button;
+
+            for (let i = 0; i < users.length; i++) {
+                const user = users[i];
+                let userDiv = document.createElement("div");
+                userDiv.innerText = user.name;
+                userDiv.className = "userDiv";
+
+                userDiv.onclick = function () {
+                    document.getElementById("user-info").innerHTML =
+                        `<table>
+                            <tr>
+                                <td>Name:</td>
+                                <td>${user.name}</td>
+                            </tr>
+                            <tr>
+                                <td>Username:</td>
+                                <td>${user.username}</td>
+                            </tr>
+                        </table>`;
+
+                    button = document.createElement("button");
+                    button.innerText = "Show posts";
+                    button.onclick = function () {
+                        let postsRequest = new XMLHttpRequest();
+                        postsRequest.open("GET",
+                            `https://jsonplaceholder.typicode.com/posts?userId=${user.id}`);
+                        postsRequest.send();
+
+                        postsRequest.onload = function () {
+                            let posts = JSON.parse(postsRequest.response);
+                            for (let i = 0; i < posts.length; i++) {
+                                let postDiv = document.createElement("div");
+                                postDiv.innerHTML =
+                                    `<h5>${posts[i].title}</h5> <p>${posts[i].body}</p>`;
+
+                                document.getElementById("user-posts").appendChild(postDiv);
+
+                            }
+                        }
+
+                    }
+
+                    userDiv.appendChild(button);
+                }
+                usersDiv.appendChild(userDiv);
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <h4>All users:</h4>
+    <div id="users">
+    </div>
+
+    <h4>User info:</h4>
+    <div id="user-info"></div>
+
+    <h4>User posts:</h4>
+    <div id="user-posts"></div>
+
+
+
+
+
+</body>
+
+</html>

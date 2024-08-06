@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+     <style>
+        .colored{
+            background-color: green;
+        }
+     </style>
+    <script>
+        $(document).ready(function () {
+
+            // jQuery methods go here...
+            $("#myButton").click(function(event){
+            //    let divText =  $("div").first().text(); //найди первый div и вытащи текст который там лежит
+            //     //eq()по индексу
+            //     $("div").first().text(`${divText}"<p>Paragraph text</p>"`);// будет дописы.${divText} при нажатии на кнопку
+            //      $("div").last().html("<p>Paragraph html </p>");
+            //      $("input").val("Input value");
+            $("div").first().append("<span>Append span </span>"); //дописывает внутри div
+            $("div").first().after("<span>Span after div </span>");// дописывает вне(после) div
+            $("div").first().prepend("<span>Span Prepend</span>");
+            $("div").first().before("<span>Span before </span>");
+            });
+            $("#removeBtn").click(function(){
+              $("div").first().remove(); 
+            });
+            $("#emptyBtn").click(function(){
+           $("div").first().empty();
+            });
+           $("#colorBtn").click(function(){
+            $("div").addClass("colored").css("font-size", "20px");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="container"></div>
+    <div></div>
+    <input type="text" />
+    <button type="button" id="myButton"> Submit</button>
+    <button type="button" id="removeBtn"> Remove</button>
+    <button type="button" id="emptyBtn"> Empty</button>
+    <button type="button" id="colorBtn"> Change color</button>
+
+
+
+</body>
+
+</html>

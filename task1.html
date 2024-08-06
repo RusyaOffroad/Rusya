@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        form {
+            width: 65%;
+            margin: auto;
+            padding: 20px;
+            background-color: beige;
+
+        }
+
+        span {
+            font-weight: bold;
+            margin: auto;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        #email,
+        #password1,
+        #password2,
+        #signUp {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+
+        #signUp {
+            font-weight: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="user-info.html" method="post">
+        <span>Registration</span>
+        <div>
+            <label for="email">Email: <br />
+                <input type="text" name="email" id="email" required />
+            </label>
+        </div>
+
+        <div>
+            <label for="password1">Password: <br />
+                <input type="password" id="password1" required />
+            </label>
+        </div>
+
+        <div>
+            <label for="password2">Repeat: <br />
+                <input type="password" id="password2" required />
+            </label>
+        </div>
+
+        <input type="submit" value="Sign Up" id="signUp" />
+
+    </form>
+</body>
+<script>
+    let form = document.forms[0];
+    form.addEventListener("submit", signUp);
+    function signUp(e) {
+        let password = document.getElementById("password").value;
+        let passwordCorrect = false;
+        let lowerCase = /[a-z]/;
+        let upperCase = /[A-Z]/;
+
+        if (lowerCase.match(password)) {
+            passwordCorrect = true;
+
+            if (password.lenght >= 6)
+                passwordCorrect = true;
+
+            if (upperCase.match(password))
+                passwordCorrect = true;
+
+            if (/\d/.test(password))
+                passwordCorrect = true;
+
+            if (num.match(password))
+                passwordCorrect = true;
+        }
+        if (passwordCorrect) {
+            let wrongPasswordMsg = document.createElement("span");
+            wrongPasswordMsg.innerText = "Password should contain at least 6 charecters...";
+            let label = document.querySelectorAll("label")[1];
+            label.insertBefore(wrongPasswordMsg,label.childNodes[1]);
+            e.preventDefault();
+        }
+        let password2 = document.getElementById("password 2").value;
+        if (password !== password2){
+            let wrongPasswordMsg = document.createElement("span");
+            wrongPasswordMsg.innerText = "Password is not correct...";
+            let label = document.querySelectorAll("label")[2];
+            label.insertBefore(wrongPasswordMsg,label.childNodes[1]);
+            e.preventDefault();
+        }
+    }
+
+</script>
+
+</html>

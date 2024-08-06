@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        div div,
+        button {
+            border: 1px solid black;
+            color: black;
+        }
+
+        div div {
+            display: inline-block;
+            margin: 10px;
+            padding: 20px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+        .shadow {
+            box-shadow: 0px 0px 15px 7px #605C5C;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function() {
+               //box-shadow: 
+            //    $(this).css("box-shadow", "0px 0px 15px 7px #605C5C");
+            $("div.red").addClass("shadow");
+            console.log($("div.red"));
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <b>Selected color:</b>
+        <button type="button" class="red">red</button>
+        <button type="button" class="green">green</button>
+        <button type="button" class="orange">orange</button>
+        <button type="button" class="yellow">yellow</button>
+    </div>
+    <hr />
+    <div>
+        <h4> Fruits:</h4>
+        <div class="red">apple</div>
+        <div class="green">pear</div>
+        <div class="orange">orange</div>
+        <div class="yellow">pineapple</div>
+    </div>
+</body>
+
+</html>
