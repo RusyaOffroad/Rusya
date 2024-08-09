@@ -101,11 +101,13 @@
                 let film = films[i];
                 let filmName = film.Title;
                 let div = document.createElement("div");
+                div.innerHTML = `<img class="image" src="${film.Poster}"/><p>${film.Type}</p><p><b>${film.Title}</br></p><p>${film.Year}</p>`;
                 div.innerText = filmName;
                 let button = document.createElement("button");
                 button.innerText = "Info";
                 document.getElementById("movie").appendChild(div).appendChild(button);
 
+                
                 button.onclick = function () {
                     let infoRequest = new XMLHttpRequest();
                     infoRequest.onload = function () {
