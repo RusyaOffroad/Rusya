@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekzam</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        /* e746782f */
+        * {
+            box-sizing: border-box;
+        }
+
+        h4 {
+            text-align: center;
+        }
+
+
+        form {
+            width: 65%;
+            margin: auto;
+            padding: 20px;
+            background-color: beige;
+        }
+
+        span {
+            font-weight: bold;
+            margin: auto;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        #signUp {
+            width: 100%;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        #movie div {
+            display: inline-block;
+            border: 2px solid black;
+            text-align: center;
+            font-weight: bold;
+            width: 150px;
+            height: 150px;
+            padding: 30px;
+            margin: 30px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <form action="/apply/" method="post">
+        <h4>Search:</h4>
+        <div>
+            <label for="title">Title:
+
+                <input type="text" id="title">
+            </label>
+        </div>
+        <br />
+        <div>
+            <label for="Type">Type:
+
+                <select name="films" id="type" required>
+                    <option value="movie" selected>movie</option>
+                    <option value="series" selected>series</option>
+                    <option value="episode" selected>episode</option>
+                </select>
+            </label>
+        </div>
+        </br>
+        <input type="submit" value="Sign Up" id="signUp" />
+
+        <h4>Films:</h4>
+        <div id="movie"></div>
+        <div id="series"></div>
+        <div id="episode"></div>
+
+</body>
+
+<script>
+    let form = document.forms[0];
+    form.addEventListener("submit", search);
+    function search(e) {
+        e.preventDefault();
+        let request = new XMLHttpRequest();
+        let title = document.getElementById("title").value;
+        let type = document.getElementById("type").value;
+
+
+        request.onload = function (e) {
+            let response = request.response;
+            let films = JSON.parse(response).Search;
+            console.log(films);
+            for (let i = 0; i < films.length; i++) {
+                let film = films[i];
+                let filmName = film.Title;
+                let div = document.createElement("div");
+                div.innerText = filmName;
+                let button = document.createElement("button");
+                button.innerText = "Info";
+                document.getElementById("movie").appendChild(div).appendChild(button);
+
+                button.onclick = function () {
+                    let infoRequest = new XMLHttpRequest();
+                    infoRequest.onload = function () {
+                        console.log(infoRequest.responseText);
+                        alert(infoRequest.responseText)
+                    }
+                    infoRequest.open("GET", `http://www.omdbapi.com/?apikey=e746782f&i=tt5867314`)
+                    infoRequest.send();
+
+                }
+            }
+        }
+
+
+        console.log(`http://www.omdbapi.com/?apikey=e746782f&s=${title}&type=${type}`);
+        request.open("GET", `http://www.omdbapi.com/?apikey=e746782f&s=${title}&type=${type}`);
+        request.send();
+    }
+
+</script>
+
+</html>
