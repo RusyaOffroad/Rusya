@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AjAH</title>
+    <style>
+        #currentday {
+            border: 2px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="currentday"></div>
+
+    <script>
+        let request = new XMLHttpRequest();
+        request.open("GET", "http://api.weatherapi.com/v1/forecast.json?key=d7c0b217278e48abb9732121241008&q=London&days=4");
+        request.send();
+        request.onload = function () {
+            let response = JSON.parse(request.response);
+            console.log(response);
+            let city = response.location.name;
+            let country = response.location.country;
+            let temp = response.current.temp_c;
+
+            console.log(city);
+            let h3 = document.createElement("h3");
+            h3.innerText = `${city}, ${country}`;
+            currentday.appendChild(h3);
+            let p = document.createElement("p");
+            p.innerHTML = `${temp} &deg;C`;
+            currentday.appendChild(p);
+}
+
+    </script>
+
+</body>
+
+</html>
