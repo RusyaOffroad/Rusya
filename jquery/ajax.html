@@ -13,11 +13,12 @@
 </head>
 
 <body>
+    <section></section>
     <div id="currentday"></div>
 
     <script>
         let request = new XMLHttpRequest();
-        request.open("GET", "http://api.weatherapi.com/v1/forecast.json?key=d7c0b217278e48abb9732121241008&q=London&days=4");
+        request.open("GET", "http://api.weatherapi.com/v1/forecast.json?key=d7c0b217278e48abb9732121241008&q=Liverpool&days=5");
         request.send();
         request.onload = function () {
             let response = JSON.parse(request.response);
@@ -25,6 +26,9 @@
             let city = response.location.name;
             let country = response.location.country;
             let temp = response.current.temp_c;
+            let wind = response.current.wind_kph;
+            let pressure = response.current.pressure_mb;
+
 
             console.log(city);
             let h3 = document.createElement("h3");
@@ -33,7 +37,49 @@
             let p = document.createElement("p");
             p.innerHTML = `${temp} &deg;C`;
             currentday.appendChild(p);
-}
+            let h4 = document.createElement("h4");
+            h4.innerText = `${wind} wind(km/h)`;
+            currentday.appendChild(h4);
+            let pPressure = document.createElement("p");
+            pPressure.innerText = `${pressure} pressure`;
+            currentday.appendChild(pPressure);
+
+            for (let i = 0; i < response.forecast.forecastday.length; i++) {
+                createDayInfo(response.forecast.forecastday[i]);
+            }
+
+
+        }
+
+        function createDayInfo (forecastday){
+            let date = new Date(forecastday.date);
+            
+            let day = getWeekDay(date.getDay());
+            let temp1 = forecastday.day.avgtemp_c;
+
+            let week = document.createElement("p");
+            week.innerText = `${day} day`;
+            currentday.appendChild(week);
+
+            let tempP = document.createElement("p");
+            tempP.innerHTML = `${temp1} &deg;C`;
+            currentday.appendChild(tempP);
+        }
+function getWeekDay(number) {
+
+            switch (number) {
+                case 1: return "Monday";
+                case 2: return "Tuesday"
+                case 3: return "Wednesday";
+                case 4: return "Thursday";
+                case 5: return "Friday";
+                case 6: return "Saturday";
+                case 7: return "Sunday";
+            }
+
+
+
+        }
 
     </script>
 
