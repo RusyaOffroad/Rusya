@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+
+    <script>
+        // let request = new XMLHttpRequest();
+        // request.open ("GET", "https://api.github.com/users/RusyaOffroad");
+        // request.send ();
+        // request.onload = function (){
+        //     console.log(request.response);
+        // }
+        
+        let request = $.ajax({
+            url: "https://api.github.com/users/RusyaOffroad",
+            method: "GET"
+        })
+            .done(function (response) { console.log(response)
+                //let pLogin = document.createElement("p");
+               // pLogin.innerText = response.login;
+               let avatar = $("img")
+                    avatar.attr("src",response.avatar_url);
+                    $("#container").append(avatar);
+                $("#container").append(`<p>${response.login}</p>`);
+                //document.getElementById("container").appendChild(pLogin);
+                let p = $("<p>");
+                    p.text("New P");
+                    p.css("color", "green");
+                    $("#container").append(p);
+
+                    
+            })
+            .fail(function () { console.log("fail")})
+            .always(function () { console.log("complete")});
+
+
+            
+            
+    </script>
+</head>
+
+<body>
+    <input type="text" name="login" id="login">
+    <button type="button">search</button>
+    <div id="container"></div>
+    <img src="" alt="">
+    
+
+</body>
+
+</html>
