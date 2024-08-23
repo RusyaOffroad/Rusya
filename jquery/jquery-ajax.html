@@ -14,32 +14,54 @@
         // request.onload = function (){
         //     console.log(request.response);
         // }
-        
-        let request = $.ajax({
-            url: "https://api.github.com/users/RusyaOffroad",
-            method: "GET"
-        })
-            .done(function (response) { console.log(response)
-                //let pLogin = document.createElement("p");
-               // pLogin.innerText = response.login;
-               let avatar = $("img")
-                    avatar.attr("src",response.avatar_url);
-                    $("#container").append(avatar);
-                $("#container").append(`<p>${response.login}</p>`);
-                //document.getElementById("container").appendChild(pLogin);
-                let p = $("<p>");
-                    p.text("New P");
-                    p.css("color", "green");
-                    $("#container").append(p);
 
-                    
+        // let request = $.ajax({
+        //     url: "https://api.github.com/users/RusyaOffroad",
+        //     method: "GET"
+        // })
+        //     .done(function (response) {
+        //         console.log(response)
+        //         //let pLogin = document.createElement("p");
+        //         // pLogin.innerText = response.login;
+        //         let avatar = $("img")
+        //         avatar.attr("src", response.avatar_url);
+        //         $("#container").append(avatar);
+        //         $("#container").append(`<p>${response.login}</p>`);
+        //         //document.getElementById("container").appendChild(pLogin);
+        //         let p = $("<p>");
+        //         p.text("New P");
+        //         p.css("color", "green");
+        //         $("#container").append(p);
+
+
+        // })
+        // .fail(function () { console.log("fail") })
+        // .always(function () { console.log("complete") });
+        $(document).ready(function (){
+            $("button").click(function () {
+                let userLogin = $("#login").val();
+                console.log(userLogin);
+                let request = $.ajax({
+                    url: `https://api.github.com/users/${userLogin}`,
+                    method: "GET"
+                })
+                    .done(function (response) {
+                        console.log(response)
+                        let avatar = $("img")
+                        avatar.attr("src", response.avatar_url);
+                        $("#container").append(avatar);
+                        $("#container").append(`<p>${response.login}</p>`);
+                        let p = $("<p>");
+                        p.text("New P");
+                        p.css("color", "green");
+                        $("#container").append(p);
+                    })
+                    .fail(function () { console.log("fail") })
+                    .always(function () { console.log("complete") });
             })
-            .fail(function () { console.log("fail")})
-            .always(function () { console.log("complete")});
+        })
 
 
-            
-            
     </script>
 </head>
 
@@ -48,7 +70,7 @@
     <button type="button">search</button>
     <div id="container"></div>
     <img src="" alt="">
-    
+
 
 </body>
 
